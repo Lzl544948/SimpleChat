@@ -29,7 +29,7 @@ public class UserController {
         if (user != null) {
             Map<String,Object> claims = new HashMap<>();
             claims.put("type","user");
-            claims.put("id",user.getUserId());
+            claims.put("username",user.getUsername());
             user.setToken(JwtUtil.generateJwt(claims));
             return Result.success(user, "登录成功！");
         } else {

@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
+import org.example.SimpleChat.config.WebSocketConfigurator;
+import org.example.SimpleChat.utils.JwtUtil;
 import org.example.SimpleChat.utils.MessageUtils;
 import org.example.SimpleChat.ws.pojo.Message;
 import org.springframework.stereotype.Component;
@@ -15,21 +17,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@ServerEndpoint(value = "/chat")
+@ServerEndpoint(value = "/chat",configurator = WebSocketConfigurator.class)
 @Component
 public class ChatEndpoint {
     private static final Map<String,Session> onlineUsers=new ConcurrentHashMap<>();//thread safe map
-    private HttpSession httpSession;
 
     private String username;
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) throws IOException {
+        //get token from url
+        String token = (String) config.getUserProperties().get("token");
 
-        // 从 URL 参数中获取用户名
-        String query = session.getQueryString(); // eg. user=张三
-        Map<String, String> params = parseQuery(query);
-        this.username = params.get("user");
+        // 从 token 参数中获取用户名
+        Map<String, Object> params = JwtUtil.parseJwt(token);
+        this.username = (String)params.get("username");
 
         if (username == null || username.isEmpty()) {
             session.close(new CloseReason(CloseReason.CloseCodes.CANNOT_ACCEPT, "Username is required"));
