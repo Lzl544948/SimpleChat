@@ -1,4 +1,4 @@
-package org.example.websocketpractice.ws.pojo;
+package org.example.SimpleChat.ws.pojo;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package org.example.websocketpractice.config;
+package org.example.SimpleChat.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

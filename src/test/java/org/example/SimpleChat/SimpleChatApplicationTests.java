@@ -1,10 +1,10 @@
-package org.example.websocketpractice;
+package org.example.SimpleChat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WebSocketPracticeApplicationTests {
+class SimpleChatApplicationTests {
 
     @Test
     void contextLoads() {

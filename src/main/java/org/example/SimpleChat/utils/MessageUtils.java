@@ -1,7 +1,7 @@
-package org.example.websocketpractice.utils;
+package org.example.SimpleChat.utils;
 
 import com.alibaba.fastjson.JSON;
-import org.example.websocketpractice.ws.pojo.ResultMessage;
+import org.example.SimpleChat.ws.pojo.ResultMessage;
 
 
 /**

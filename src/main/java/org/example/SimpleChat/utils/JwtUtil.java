@@ -1,4 +1,4 @@
-package org.example.websocketpractice.utils;
+package org.example.SimpleChat.utils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

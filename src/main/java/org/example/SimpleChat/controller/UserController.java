@@ -1,9 +1,9 @@
-package org.example.websocketpractice.controller;
+package org.example.SimpleChat.controller;
 
 
-import org.example.websocketpractice.pojo.User;
-import org.example.websocketpractice.utils.JwtUtil;
-import org.example.websocketpractice.utils.Result;
+import org.example.SimpleChat.pojo.User;
+import org.example.SimpleChat.utils.JwtUtil;
+import org.example.SimpleChat.utils.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

@@ -1,11 +1,11 @@
-package org.example.websocketpractice.ws;
+package org.example.SimpleChat.ws;
 
 import com.alibaba.fastjson.JSON;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
-import org.example.websocketpractice.utils.MessageUtils;
-import org.example.websocketpractice.ws.pojo.Message;
+import org.example.SimpleChat.utils.MessageUtils;
+import org.example.SimpleChat.ws.pojo.Message;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
