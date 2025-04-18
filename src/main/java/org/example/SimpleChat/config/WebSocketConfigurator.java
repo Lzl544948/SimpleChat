@@ -18,9 +18,11 @@ public class WebSocketConfigurator extends ServerEndpointConfig.Configurator {
         // 将参数存储到 UserProperties 中，以便在 @OnOpen 中使用
       //  String user = parameterMap.get("user").get(0);
         String token = parameterMap.get("token").get(0);
+        String sessionId = parameterMap.get("sessionId").get(0);
 
       //  sec.getUserProperties().put("user", user);
         sec.getUserProperties().put("token", token);
+        sec.getUserProperties().put("sessionId", sessionId);
     }
 
 }
